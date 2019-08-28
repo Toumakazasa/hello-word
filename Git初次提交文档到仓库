@@ -8,7 +8,7 @@ mkdir learngit        //创建一个learngit的文件夹
 $ cd learngit         //进入该文件夹
 $ pwd                 //显示该文件夹的路径
 $ git init            //把该目录变成git可以管理的仓库目录
-然后我们创建一个txt文本，编辑好后，保存退出，注意该文件要在仓库目录下创建
+然后我们创建一个txt文本，编辑好内容后，保存退出，注意该文件要在仓库目录下创建
 否则会出现fatal: not a git repository (or any of the parent directories): .git
 
 $ git add aoke.txt                                   // git add 将文档添加到仓库
