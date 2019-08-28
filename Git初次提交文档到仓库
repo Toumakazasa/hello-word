@@ -1,0 +1,35 @@
+初次提交文件到git仓库.
+下载好git后，右键运行git bash here，进入git命令窗口后
+设置好user name 和email.
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+这时候我们需要创建一个文件夹作为git的仓库.需要用到的命令
+mkdir learngit        //创建一个learngit的文件夹
+$ cd learngit         //进入该文件夹
+$ pwd                 //显示该文件夹的路径
+$ git init            //把该目录变成git可以管理的仓库目录
+然后我们创建一个txt文本，编辑好后，保存退出，注意该文件要在仓库目录下创建
+否则会出现fatal: not a git repository (or any of the parent directories): .git
+
+$ git add aoke.txt                                   // git add 将文档添加到仓库
+warning: LF will be replaced by CRLF in aoke.txt.   //会出现这个提示是因为Git的换行符检查功能。LF是linux下的换行符，而CRLF是enter + 换行
+为了跨平台方便，Git提供了一个换行符检查功能（core.safecrlf），可以在提交时检查文件是否混用了不同风格的换行符。这个功能的选项如下：
+false - 不做任何检查
+warn - 在提交时检查并警告
+true - 在提交时检查，如果发现混用则拒绝提交
+建议使用最严格的 true 选项。方法如下
+$ git config --global core.autocrlf true 
+设置完后我们就可以提交文档  
+
+$ git commit -m "wrote a aoke file"  //git commit 将文档提交到仓库  -m是提交文档的说明
+[master (root-commit) a703c10] wrote a aoke file    //提交成功后会提示你1个文件改动，X行新添加的内容
+ 1 file changed, 2 insertions(+)
+ create mode 100644 aoke.txt
+到这步就是成功提交了，可以用
+$ ls -la      //查看该目录下所有文件
+total 9
+drwxr-xr-x 1 lenovo 197609  0  8月 28 12:49 ./
+drwxr-xr-x 1 lenovo 197609  0  8月 28 12:51 ../
+drwxr-xr-x 1 lenovo 197609  0  8月 28 12:49 .git/
+-rw-r--r-- 1 lenovo 197609 55  8月 28 12:49 aoke.txt
+
